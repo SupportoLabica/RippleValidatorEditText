@@ -1,9 +1,8 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
 
 ext {
-  bintrayRepo = 'maven'
-  bintrayName = 'RippleValidatorEditText'
+  // bintrayRepo = 'maven'
+  // bintrayName = 'RippleValidatorEditText'
 
   publishedGroupId = 'me.omidh'
   libraryName = 'RippleValidatorEditText'
@@ -26,6 +25,7 @@ ext {
 }
 
 android {
+  namespace "me.omidh.ripplevalidatoredittext"
   compileSdkVersion 25
   buildToolsVersion "25.0.0"
 
@@ -46,13 +46,13 @@ android {
 }
 
 dependencies {
-  testCompile 'junit:junit:4.12'
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+  testImplementation 'junit:junit:4.12'
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support:appcompat-v7:25.3.1'
+  implementation 'com.android.support:appcompat-v7:25.3.1'
 }
 
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
-apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+// apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+// apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
